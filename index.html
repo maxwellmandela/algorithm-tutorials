@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff9ed" />
+    <meta name="description" content="A friendly, step-by-step picture of how a computer sorts numbers." />
+    <title>Number Sort Adventure</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Number Sort Adventure home">
+          <span class="brand-icon" aria-hidden="true">✦</span>
+          <span>Curious Computer</span>
+        </a>
+        <span class="topbar-note">A tiny computer adventure</span>
+      </header>
+
+      <section class="welcome">
+        <div class="welcome-copy">
+          <span class="kicker"><span class="kicker-star">✳</span> TODAY'S ADVENTURE</span>
+          <h1>Let's sort<br /><span>some numbers!</span></h1>
+        </div>
+        <form class="array-form" id="array-form">
+          <label for="array-input">Choose your number blocks</label>
+          <div class="input-row">
+            <input id="array-input" value="5, 2, 4, 1, 3" aria-describedby="input-hint" spellcheck="false" />
+            <button type="submit" class="load-button">Let's go <span aria-hidden="true">→</span></button>
+          </div>
+          <div id="input-hint" class="input-hint">Pick 2–8 numbers from 0 to 99.</div>
+        </form>
+      </section>
+
+      <section class="adventure" aria-label="Number sorting animation">
+        <div class="adventure-top">
+          <div class="step-badge"><span class="sparkle">✦</span> <span id="step-label">Ready to play</span></div>
+          <div class="progress-dots" id="progress-dots" aria-label="Sorting progress"></div>
+        </div>
+
+        <div class="scene">
+          <div class="scene-sky" aria-hidden="true">
+            <span class="cloud cloud-one"></span><span class="cloud cloud-two"></span>
+            <span class="sun"></span>
+          </div>
+          <div class="scene-title">
+            <span class="scene-caption">THE COMPUTER'S DESK</span>
+            <h2 id="scene-title">Ready, set, sort!</h2>
+          </div>
+          <div class="sort-area">
+            <div class="shelf-label"><span>NUMBER SHELF</span><span id="sorted-label">We'll sort from left to right</span></div>
+            <div class="number-shelf"><div class="tile-row" id="tile-row"></div></div>
+            <div class="shelf-legs" aria-hidden="true"><i></i><i></i></div>
+            <div class="key-area" id="key-area" hidden>
+              <span class="key-arrow" aria-hidden="true">↗</span>
+              <div id="key-tile"></div>
+              <span class="key-caption">IN THE COMPUTER'S HAND</span>
+            </div>
+          </div>
+          <div class="robot" aria-hidden="true">
+            <div class="robot-antenna"><i></i></div>
+            <div class="robot-head"><span class="robot-eye"></span><span class="robot-eye"></span><span class="robot-smile"></span></div>
+            <div class="robot-body"><span>CPU</span></div>
+            <div class="robot-arm robot-arm-left"></div><div class="robot-arm robot-arm-right"></div>
+          </div>
+          <div class="speech-bubble" id="speech-bubble">Hi! I'll help put these numbers in order.</div>
+          <div class="scene-floor" aria-hidden="true"></div>
+        </div>
+
+        <div class="story-card" aria-live="polite">
+          <div class="story-icon" id="story-icon" aria-hidden="true">👋</div>
+          <div class="story-copy">
+            <span class="story-kicker" id="story-kicker">HELLO, SORTER!</span>
+            <p id="story-text">We'll look at one number at a time and slide it into the right spot.</p>
+          </div>
+        </div>
+
+        <details class="computer-details">
+          <summary><span class="details-plus">+</span> Grown-up corner: peek inside the computer</summary>
+          <div class="details-content">
+            <div class="detail-block">
+              <span class="detail-label">MEMORY · THE COMPUTER'S SHELF</span>
+              <p id="memory-detail">The numbers wait in memory until the computer needs them.</p>
+              <div class="byte-list" id="byte-list"></div>
+            </div>
+            <div class="detail-block cpu-detail">
+              <span class="detail-label">CPU · THE COMPUTER'S THINKING</span>
+              <p id="cpu-detail">The CPU reads, compares, and writes values using a few small storage spots called registers.</p>
+              <code id="instruction-detail">Ready</code>
+            </div>
+          </div>
+          <p class="model-note">This is a simplified teaching model. Real computers and programming languages handle these steps in more complicated ways.</p>
+        </details>
+
+        <nav class="playback" aria-label="Animation controls">
+          <button type="button" class="back-button" id="back-button" disabled><span aria-hidden="true">←</span> Back</button>
+          <div class="playback-center">
+            <button type="button" class="play-button" id="play-button">
+              <span class="play-icon" id="play-icon" aria-hidden="true">▶</span>
+              <span id="play-label">Start sorting</span>
+            </button>
+            <button type="button" class="next-button" id="next-button">Next step <span aria-hidden="true">→</span></button>
+          </div>
+          <button type="button" class="reset-button" id="reset-button" aria-label="Start over" title="Start over">↺</button>
+        </nav>
+      </section>
+
+      <footer><span>Made for curious minds, one number at a time.</span><span>Try changing the numbers to see what happens!</span></footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
